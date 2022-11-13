@@ -1,19 +1,13 @@
-# revision 15878
-# category Package
-# catalog-ctan /macros/latex/contrib/xmpincl
-# catalog-date 2008-05-10 20:43:24 +0200
-# catalog-license gpl
-# catalog-version 2.2
 Name:		texlive-xmpincl
-Version:	2.2
-Release:	11
+Version:	60593
+Release:	1
 Summary:	Include eXtensible Metadata Platform data in PDFLaTeX
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/xmpincl
 License:	GPL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/xmpincl.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/xmpincl.doc.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/xmpincl.source.tar.xz
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/xmpincl.r%{version}.tar.xz
+Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/xmpincl.doc.r%{version}.tar.xz
+Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/xmpincl.source.r%{version}.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -32,12 +26,12 @@ licenses, and their web-site offers this information in a valid
 XML-file, suitable for direct inclusion.
 
 %post
-    %{_sbindir}/texlive.post
+%{_sbindir}/texlive.post
 
 %postun
-    if [ $1 -eq 0 ]; then
+if [ $1 -eq 0 ]; then
 	%{_sbindir}/texlive.post
-    fi
+fi
 
 #-----------------------------------------------------------------------
 %files
@@ -51,23 +45,11 @@ XML-file, suitable for direct inclusion.
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0 -a1 -a2
+%setup -c -a1 -a2
+%autopatch -p1
 
 %build
 
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc source %{buildroot}%{_texmfdistdir}
-
-
-%changelog
-* Thu Jan 05 2012 Paulo Andrade <pcpa@mandriva.com.br> 2.2-2
-+ Revision: 757665
-- Rebuild to reduce used resources
-
-* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 2.2-1
-+ Revision: 719946
-- texlive-xmpincl
-- texlive-xmpincl
-- texlive-xmpincl
-
