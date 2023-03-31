@@ -1,6 +1,6 @@
 Name:		texlive-xmpincl
 Version:	60593
-Release:	1
+Release:	2
 Summary:	Include eXtensible Metadata Platform data in PDFLaTeX
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/xmpincl
