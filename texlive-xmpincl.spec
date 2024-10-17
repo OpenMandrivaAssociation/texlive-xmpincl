@@ -3,7 +3,7 @@ Version:	60593
 Release:	2
 Summary:	Include eXtensible Metadata Platform data in PDFLaTeX
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/xmpincl
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/xmpincl
 License:	GPL
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/xmpincl.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/xmpincl.doc.r%{version}.tar.xz
